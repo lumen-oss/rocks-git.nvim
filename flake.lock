@@ -874,13 +874,13 @@
       "locked": {
         "lastModified": 1725255090,
         "narHash": "sha256-pas2N3icONpHqKkkPDWMB1s+yyspdsbu1A8RKI04ako=",
-        "owner": "nvim-neorocks",
+        "owner": "lumen-oss",
         "repo": "neorocks",
         "rev": "6b931ae85a6121a42bc7034970ddf9f7fabf7521",
         "type": "github"
       },
       "original": {
-        "owner": "nvim-neorocks",
+        "owner": "lumen-oss",
         "repo": "neorocks",
         "type": "github"
       }
@@ -896,13 +896,13 @@
       "locked": {
         "lastModified": 1725081882,
         "narHash": "sha256-bH2AF0wtT/zSXlQ0yrGzmEWuBWdAZR5YDbj0E3rkEOc=",
-        "owner": "nvim-neorocks",
+        "owner": "lumen-oss",
         "repo": "neorocks",
         "rev": "355898b986e1294253465ae84bbb07f95ba1fcdc",
         "type": "github"
       },
       "original": {
-        "owner": "nvim-neorocks",
+        "owner": "lumen-oss",
         "repo": "neorocks",
         "type": "github"
       }
@@ -1388,13 +1388,13 @@
       "locked": {
         "lastModified": 1725376250,
         "narHash": "sha256-jqHkgpojLKipcTokhubM/JziW18fPU28jxDVn1nQzF4=",
-        "owner": "nvim-neorocks",
+        "owner": "lumen-oss",
         "repo": "rocks.nvim",
         "rev": "b4d053f7fac551f539470d4713c5122a84545634",
         "type": "github"
       },
       "original": {
-        "owner": "nvim-neorocks",
+        "owner": "lumen-oss",
         "repo": "rocks.nvim",
         "type": "github"
       }

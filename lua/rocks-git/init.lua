@@ -33,7 +33,7 @@
 -- License:    GPLv3
 -- Created:    17 Dec 2023
 -- Updated:    27 Feb 2024
--- Homepage:   https://github.com/nvim-neorocks/rocks-git.nvim
+-- Homepage:   https://github.com/lumen-oss/rocks-git.nvim
 -- Maintainer: mrcjkb <marc@jakobi.dev>
 
 local rocks_git = {}
@@ -47,7 +47,7 @@ local nio = require("nio")
 
 ---@class PackageSpec: RockSpec
 ---@field name string Name of the plugin.
----@field git string Git short name, e.g. 'nvim-neorocks/rocks-git.nvim', or a git URL.
+---@field git string Git short name, e.g. 'lumen-oss/rocks-git.nvim', or a git URL.
 ---@field opt? boolean If 'true', will not be loaded on startup. Can be loaded manually with `:packadd!`.
 ---@field rev? string Git revision or tag to checkout.
 ---@field branch? string Git branch to checkout.

@@ -11,7 +11,7 @@
 -- License:    GPLv3
 -- Created:    03 Sep 2024
 -- Updated:    03 Sep 2024
--- Homepage:   https://github.com/nvim-neorocks/rocks-git.nvim
+-- Homepage:   https://github.com/lumen-oss/rocks-git.nvim
 -- Maintainer: mrcjkb <marc@jakobi.dev>
 
 local log = require("rocks.log")

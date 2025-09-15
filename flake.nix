@@ -2,18 +2,18 @@
   description = "Use rocks.nvim to install plugins from git!";
 
   nixConfig = {
-    extra-substituters = "https://neorocks.cachix.org";
-    extra-trusted-public-keys = "neorocks.cachix.org-1:WqMESxmVTOJX7qoBC54TwrMMoVI1xAM+7yFin8NRfwk=";
+    extra-substituters = "https://lumen-labs.cachix.org";
+    extra-trusted-public-keys = "lumen-labs.cachix.org-1:WmGwJxPmN6cIqKJHYTq/C1WIaqIUneH+t+BAT34Qag0=";
   };
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs";
 
-    neorocks.url = "github:nvim-neorocks/neorocks";
+    neorocks.url = "github:lumen-oss/neorocks";
 
     gen-luarc.url = "github:mrcjkb/nix-gen-luarc-json";
 
-    rocks-nvim-flake.url = "github:nvim-neorocks/rocks.nvim";
+    rocks-nvim-flake.url = "github:lumen-oss/rocks.nvim";
 
     flake-parts.url = "github:hercules-ci/flake-parts";
 

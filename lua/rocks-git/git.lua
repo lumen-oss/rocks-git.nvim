@@ -12,7 +12,7 @@
 -- License:    GPLv3
 -- Created:    17 Dec 2023
 -- Updated:    17 Dec 2023
--- Homepage:   https://github.com/nvim-neorocks/rocks-git.nvim
+-- Homepage:   https://github.com/lumen-oss/rocks-git.nvim
 -- Maintainer: mrcjkb <marc@jakobi.dev>
 
 local git = {}
@@ -29,7 +29,7 @@ local nio = require("nio")
 local function git_cli(args, on_exit, opts)
     opts = opts or {}
     opts.env = opts.env or {}
-    -- Edge case, see https://github.com/nvim-neorocks/rocks-git.nvim/issues/78
+    -- Edge case, see https://github.com/lumen-oss/rocks-git.nvim/issues/78
     opts.env.GIT_DIR = nil
     opts.env.GIT_WORK_TREE = nil
     local git_cmd = vim.list_extend({
@@ -69,7 +69,7 @@ local function clone(pkg, on_exit)
     return git_cli(args, on_exit, {
         -- This is always the 'start' or 'opt' directory.
         -- Setting the cwd should prevent issues like
-        -- https://github.com/nvim-neorocks/rocks.nvim/issues/554#
+        -- https://github.com/lumen-oss/rocks.nvim/issues/554#
         cwd = vim.fs.dirname(pkg.dir),
     })
 end

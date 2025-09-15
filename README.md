@@ -1,7 +1,7 @@
 <!-- markdownlint-disable -->
 <br />
 <div align="center">
-  <a href="https://github.com/nvim-neorocks/rocks-git.nvim">
+  <a href="https://github.com/lumen-oss/rocks-git.nvim">
     <img src="./rocks-header.svg" alt="rocks-git.nvim">
   </a>
   <p align="center">
@@ -9,15 +9,15 @@
     <a href="./doc/rocks-git.txt"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/nvim-neorocks/rocks-git.nvim/issues/new?assignees=&labels=bug">Report Bug</a>
+    <a href="https://github.com/lumen-oss/rocks-git.nvim/issues/new?assignees=&labels=bug">Report Bug</a>
     ·
-    <a href="https://github.com/nvim-neorocks/rocks-git.nvim/issues/new?assignees=&labels=enhancement">Request Feature</a>
+    <a href="https://github.com/lumen-oss/rocks-git.nvim/issues/new?assignees=&labels=enhancement">Request Feature</a>
     ·
-    <a href="https://github.com/nvim-neorocks/rocks.nvim/discussions/new?category=q-a">Ask Question</a>
+    <a href="https://github.com/lumen-oss/rocks.nvim/discussions/new?category=q-a">Ask Question</a>
   </p>
   <p>
     <strong>
-      Use <a href="https://github.com/nvim-neorocks/rocks.nvim/">rocks.nvim</a> to install plugins from git!
+      Use <a href="https://github.com/lumen-oss/rocks.nvim/">rocks.nvim</a> to install plugins from git!
     </strong>
   </p>
 </div>
@@ -27,7 +27,7 @@
 
 ## :star2: Summary
 
-`rocks-git.nvim` extends [`rocks.nvim`](https://github.com/nvim-neorocks/rocks-git.nvim)
+`rocks-git.nvim` extends [`rocks.nvim`](https://github.com/lumen-oss/rocks-git.nvim)
 with the ability to install plugins from git repositories.
 
 It does so by hooking into the `:Rocks {install|update|sync|prune}` commands,
@@ -84,7 +84,7 @@ that is managed by this plugin:
 | Field          | Type      | Required?             | Description                                                                                          |
 |:--             |:--        |:--                    |:--                                                                                                   |
 | `name`         | `string`  | Yes                   | Name of the plugin                                                                                   |
-| `git`          | `string`  | Yes                   | Git short name[^1], e.g. `"nvim-neorocks/rocks-git.nvim"` or a git URL.                              |
+| `git`          | `string`  | Yes                   | Git short name[^1], e.g. `"lumen-oss/rocks-git.nvim"` or a git URL.                              |
 | `opt`          | `boolean` | No (default: `false`) | Plugins with `opt = true` will not be loaded on startup. See `:h packadd`                            |
 | `rev`          | `string`  | No                    | Git revision or tag to checkout                                                                      |
 | `branch`       | `string`  | No                    | Git branch to checkout                                                                               |

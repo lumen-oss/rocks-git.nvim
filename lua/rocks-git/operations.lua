@@ -12,7 +12,7 @@
 -- License:    GPLv3
 -- Created:    17 Dec 2023
 -- Updated:    17 Dec 2023
--- Homepage:   https://github.com/nvim-neorocks/rocks-git.nvim
+-- Homepage:   https://github.com/lumen-oss/rocks-git.nvim
 -- Maintainer: mrcjkb <marc@jakobi.dev>
 
 local operations = {}
