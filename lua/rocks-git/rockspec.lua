@@ -6,7 +6,7 @@
 ---
 ---@brief ]]
 
--- Copyright (C) 2024 Neorocks Org.
+-- Copyright (C) 2024 Lumen Labs Org.
 --
 -- License:    GPLv3
 -- Created:    03 Sep 2024
