@@ -150,6 +150,7 @@ rocks_git.get_install_callback = nio.create(function(mut_rocks_toml, arg_list)
             rev = checkout_spec.rev,
             branch = checkout_spec.branch,
             build = checkout_spec.build,
+            ignore_tags = checkout_spec.ignore_tags,
         }
         local pkg = mk_package(spec)
         if vim.uv.fs_stat(pkg.dir) then
