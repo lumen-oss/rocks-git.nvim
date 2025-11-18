@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.7](https://github.com/lumen-oss/rocks-git.nvim/compare/v2.5.6...v2.5.7) (2025-11-18)
+
+
+### Bug Fixes
+
+* persist `ignore_tags` option to rocks.toml ([#92](https://github.com/lumen-oss/rocks-git.nvim/issues/92)) ([2cec577](https://github.com/lumen-oss/rocks-git.nvim/commit/2cec57740b3a12169c5e5a0c13b31b37e2e05dbe))
+
 ## [2.5.6](https://github.com/lumen-oss/rocks-git.nvim/compare/v2.5.5...v2.5.6) (2025-09-15)
 
 
