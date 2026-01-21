@@ -5,7 +5,7 @@
 
 ### Bug Fixes
 
-* remote debug print ([#95](https://github.com/lumen-oss/rocks-git.nvim/issues/95)) ([c524ab3](https://github.com/lumen-oss/rocks-git.nvim/commit/c524ab3dcb4012438a3331578e0c8295bd82b41d))
+* remove debug print ([#95](https://github.com/lumen-oss/rocks-git.nvim/issues/95)) ([c524ab3](https://github.com/lumen-oss/rocks-git.nvim/commit/c524ab3dcb4012438a3331578e0c8295bd82b41d))
 
 ## [2.5.7](https://github.com/lumen-oss/rocks-git.nvim/compare/v2.5.6...v2.5.7) (2025-11-18)
 
