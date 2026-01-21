@@ -278,7 +278,7 @@ end
 git.is_outdated = nio.create(function(pkg)
     ---@cast pkg rocks-git.Package
     local future = nio.control.future()
-    local version = vim.print(parser.get_version(pkg.rev))
+    local version = parser.get_version(pkg.rev)
     if not version then
         git_cli({ "status", "--untracked-files=no" }, function(sc)
             if sc.code ~= 0 then
