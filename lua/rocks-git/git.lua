@@ -233,13 +233,21 @@ end
 ---@param pkg rocks-git.Package
 ---@return string | nil head The remote HEAD branch name
 function git.get_head_branch(pkg)
-    local git_dir = vim.fs.joinpath(pkg.dir, ".git")
-    local remote_head_ref = read_line(vim.fs.joinpath(git_dir, "refs", "remotes", "origin", "HEAD"))
-    if not remote_head_ref then
-        return
-    end
-    remote_head_ref = remote_head_ref:gsub("ref: refs/remotes/origin/", "")
-    return remote_head_ref
+    -- local git_dir = vim.fs.joinpath(pkg.dir, ".git")
+    -- local remote_head_ref = read_line(vim.fs.joinpath(git_dir, "refs", "remotes", "origin", "HEAD"))
+    -- if not remote_head_ref then
+    --     return
+    -- end
+    -- remote_head_ref = remote_head_ref:gsub("ref: refs/remotes/origin/", "")
+    local args = { "symbolic-ref", "HEAD" }
+    return git_cli(args, function (sc)
+            vim.print(sc)
+            if sc.code ~= 0 then
+                log.error(sc)
+            else
+                return sc.stdout
+            end
+        end)
 end
 
 ---@param url string
