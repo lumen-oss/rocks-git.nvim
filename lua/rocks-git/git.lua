@@ -245,7 +245,9 @@ function git.get_head_branch(pkg)
             if sc.code ~= 0 then
                 log.error(sc)
             else
-                return sc.stdout
+                local res = sc.stdout
+                print(res)
+                return res
             end
         end)
 end
