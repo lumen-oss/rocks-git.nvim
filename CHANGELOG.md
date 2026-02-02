@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.9](https://github.com/lumen-oss/rocks-git.nvim/compare/v2.5.8...v2.5.9) (2026-02-02)
+
+
+### Bug Fixes
+
+* support git remotes other than 'origin' ([#97](https://github.com/lumen-oss/rocks-git.nvim/issues/97)) ([acf4464](https://github.com/lumen-oss/rocks-git.nvim/commit/acf4464373d72c758eac0efe0ad80f97ce513e91))
+
 ## [2.5.8](https://github.com/lumen-oss/rocks-git.nvim/compare/v2.5.7...v2.5.8) (2026-01-21)
 
 
