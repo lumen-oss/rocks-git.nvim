@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.10](https://github.com/lumen-oss/rocks-git.nvim/compare/v2.5.9...v2.5.10) (2026-02-03)
+
+
+### Bug Fixes
+
+* prevent calling vimscript function in fast event context ([d828041](https://github.com/lumen-oss/rocks-git.nvim/commit/d828041c177b48d1b5cc37a824bf8efed1f7c3f0))
+
 ## [2.5.9](https://github.com/lumen-oss/rocks-git.nvim/compare/v2.5.8...v2.5.9) (2026-02-02)
 
 
