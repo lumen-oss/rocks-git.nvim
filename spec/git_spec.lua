@@ -1,4 +1,5 @@
 local git = require("rocks-git.git")
+local a = require("nio").tests
 
 local origin_pkg_dir = vim.fn.tempname()
 local origin_pkg_remote_dir = vim.fs.joinpath(origin_pkg_dir, ".git", "refs", "remotes", "origin")
@@ -33,5 +34,13 @@ describe("git", function()
             url = "https://github.com/lumen-oss/luarocks-stub.git",
         })
         assert.Same("bar", head_branch)
+    end)
+
+    a.it("Handles a remote without semver tags", function()
+        local url = "https://github.com/lumen-oss/luarocks-stub.git"
+        local version_tuple = git.get_latest_remote_semver_tag(url).wait()
+        vim.print(version_tuple)
+        -- {} if no tag, else latest_tag, latest_version
+        assert.Same({}, version_tuple)
     end)
 end)
