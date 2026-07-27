@@ -1,0 +1,5 @@
+PackageSpec	rocks-git.txt	/*PackageSpec*
+RocksGitConfig	rocks-git.txt	/*RocksGitConfig*
+rocks-git	rocks-git.txt	/*rocks-git*
+rocks-git.config	rocks-git.txt	/*rocks-git.config*
+rocks-git.contents	rocks-git.txt	/*rocks-git.contents*
