@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.6.0](https://github.com/lumen-oss/rocks-git.nvim/compare/v2.5.10...v2.6.0) (2026-07-27)
+
+
+### Features
+
+* **checkout:** show name of failing package in error log ([#100](https://github.com/lumen-oss/rocks-git.nvim/issues/100)) ([4742490](https://github.com/lumen-oss/rocks-git.nvim/commit/47424909f3432348e8201de26b7a0df98dbade7c))
+
 ## [2.5.10](https://github.com/lumen-oss/rocks-git.nvim/compare/v2.5.9...v2.5.10) (2026-02-03)
 
 
