@@ -160,7 +160,7 @@ local update_to_rev = nio.create(function(on_progress, on_error, pkg)
     end
     local futureOpt = git.checkout(pkg)
     if futureOpt and not pcall(futureOpt.wait) then
-        on_error(("rocks-git: Failed to checkout %s"):format(pkg.rev))
+        on_error(("rocks-git: Failed to checkout %s %s"):format(pkg.name, pkg.rev))
     end
     ok = build_if_required(on_progress, on_error, pkg)
     return ok
