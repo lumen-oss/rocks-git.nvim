@@ -261,12 +261,17 @@ function git.get_latest_remote_semver_tag(url)
     get_latest_remote_version_tag(url, function(sc)
         ---@cast sc vim.SystemCompleted
         if sc.code == 0 then
-            local latest_tag, latest_version = parser.parse_git_latest_semver_tag(sc.stdout or "")
-            if latest_tag and latest_version then
-                future.set({ latest_tag, latest_version })
-            else
-                log.warn("Could not parse latest tag from: " .. sc.stdout)
+            if sc.stdout == "" then
+                log.debug("No tag found for " .. url)
                 future.set({})
+            else
+                local latest_tag, latest_version = parser.parse_git_latest_semver_tag(sc.stdout)
+                if latest_tag and latest_version then
+                    future.set({ latest_tag, latest_version })
+                else
+                    log.warn("Could not parse latest tag from: " .. sc.stdout)
+                    future.set({})
+                end
             end
         else
             log.warn(sc.stderr)
