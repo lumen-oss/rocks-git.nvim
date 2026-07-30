@@ -203,6 +203,7 @@ operations.sync = nio.create(function(on_progress, on_error, on_success, pkg)
     end
     local rev = git.get_checked_out_rev(pkg)
     if rev == pkg.rev then
+        log.debug("Already at rev %s: nothing to do", rev)
         return
     else
         on_progress(("rocks-git: %s"):format(pkg.name))
