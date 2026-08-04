@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.6.1](https://github.com/lumen-oss/rocks-git.nvim/compare/v2.6.0...v2.6.1) (2026-08-04)
+
+
+### Bug Fixes
+
+* dont warn when no remote tags exist ([#102](https://github.com/lumen-oss/rocks-git.nvim/issues/102)) ([9a87db5](https://github.com/lumen-oss/rocks-git.nvim/commit/9a87db5d82af6d53ae31f695dd201fdf56db5e66))
+
 ## [2.6.0](https://github.com/lumen-oss/rocks-git.nvim/compare/v2.5.10...v2.6.0) (2026-07-27)
 
 
