@@ -93,12 +93,12 @@ end
 
 ---Checks out the `rev` specified by the package, if one is specified.
 ---@param pkg rocks-git.Package
----@param ref? string
+---@param ref string Can be branch/ref/rev/tag/tree-ish, passed on to checkout
 ---@param on_exit? fun(sc: vim.SystemCompleted) Called asynchronously when the git command exits.
 ---@return vim.SystemObj | nil
 ---@see vim.system
 local function checkout(pkg, ref, on_exit)
-    local args = { "checkout", ref or pkg.rev, "--force", "--recurse-submodules" }
+    local args = { "checkout", ref, "--force", "--recurse-submodules" }
     return git_cli(args, on_exit, {
         cwd = pkg.dir,
     })
@@ -112,7 +112,7 @@ function git.checkout(pkg)
         return
     end
     local future = nio.control.future()
-    checkout(pkg, nil, function(sc)
+    checkout(pkg, pkg.rev, function(sc)
         ---@cast sc vim.SystemCompleted
         if sc.code == 0 then
             future.set(true)

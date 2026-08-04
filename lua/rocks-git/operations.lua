@@ -225,7 +225,7 @@ end, 4)
 operations.update = nio.create(function(on_progress, on_error, on_success, pkg)
     local version_tuple = pkg.ignore_tags and {} or git.get_latest_remote_semver_tag(pkg.url).wait()
     ---@cast version_tuple tag_version_tuple
-    local prev = pkg.rev or git.get_checked_out_rev(pkg)
+    local prev_rev = pkg.rev or git.get_checked_out_rev(pkg)
     if vim.tbl_isempty(version_tuple) and parser.is_version(pkg.rev) then
         log.info(("Latest remote tag is not semver, but %s is pinned to a semver version. Skipping"):format(pkg.name))
         return
@@ -240,10 +240,10 @@ operations.update = nio.create(function(on_progress, on_error, on_success, pkg)
     end
     if ok then
         install_semver_stub(pkg, on_success)
-        on_progress(("rocks-git: Updated %s: %s -> %s"):format(pkg.name, prev, pkg.rev))
+        on_progress(("rocks-git: Updated %s: %s -> %s"):format(pkg.name, prev_rev, pkg.rev))
         return pkg
     else
-        pkg.rev = prev
+        pkg.rev = prev_rev
         return pkg
     end
 end, 4)
