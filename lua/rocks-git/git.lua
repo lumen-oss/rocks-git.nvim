@@ -166,11 +166,12 @@ local function pull(pkg, on_exit)
     })
 end
 
+---Checkout remote default branch
 ---@param pkg rocks-git.Package
 ---@return nio.control.Future
 function git.ensure_head_branch(pkg)
     local future = nio.control.future()
-    local head_branch = git.get_head_branch(pkg)
+    local head_branch = git.get_head_branch(pkg).wait()
     if head_branch then
         checkout(pkg, head_branch, function(sc)
             ---@cast sc vim.SystemCompleted
@@ -217,6 +218,7 @@ local function read_line(path)
     end
 end
 
+---Returns most readable ref: tag > ref > rev
 ---@param pkg rocks-git.Package
 ---@return string | nil rev The git hash or tag that is currently checked out
 function git.get_checked_out_rev(pkg)
@@ -230,18 +232,33 @@ function git.get_checked_out_rev(pkg)
     return tag or read_line(vim.fs.joinpath(git_dir, head_ref))
 end
 
+---Get remote default head branch
 ---@param pkg rocks-git.Package
----@return string | nil head The remote HEAD branch name
+---@return nio.control.Future head The remote HEAD branch name
 function git.get_head_branch(pkg)
-    local git_dir = vim.fs.joinpath(pkg.dir, ".git")
-    local remotes_dir = vim.fs.joinpath(git_dir, "refs", "remotes")
-    return vim.iter(vim.fs.dir(remotes_dir))
-        :map(function(remote_subdir)
-            return read_line(vim.fs.joinpath(remotes_dir, remote_subdir, "HEAD"))
-        end)
-        :find(function(head_file_content)
-            return head_file_content:gsub("ref: refs/remotes/.+/", "")
-        end)
+    local args = { "ls-remote", "--symref", pkg.url, "HEAD" }
+    local future = nio.control.future()
+    local on_exit = function(sc)
+        if sc.code ~= 0 then
+            log.error("an error happened while ls-remote:")
+            log.error(sc.stderr)
+            future.set(false)
+        else
+            local branch = sc.stdout:match("ref:%s+refs/heads/([^%s]+)%s+HEAD")
+            if not branch then
+                log.error("Could not deduce default branch from: %s", sc.stdout)
+                future.set(false)
+            else
+                log.debug("Default remote branch is ", branch)
+                future.set(branch)
+            end
+        end
+    end
+
+    git_cli(args, on_exit, {
+        cwd = pkg.dir,
+    })
+    return future
 end
 
 ---@param url string
